@@ -20,6 +20,10 @@
 		1C44FBFD253247DA00416C15 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FBFC253247DA00416C15 /* HomeCoordinator.swift */; };
 		1C44FC052532480100416C15 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FC042532480100416C15 /* HomeViewController.swift */; };
 		1C44FC0E2532488E00416C15 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FC0D2532488E00416C15 /* Environment.swift */; };
+		1C44FC3F2532507800416C15 /* validResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 1C44FC3E2532507800416C15 /* validResponse.json */; };
+		1C44FC44253250BB00416C15 /* ModelParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FC43253250BB00416C15 /* ModelParsingTests.swift */; };
+		1C44FC492532548F00416C15 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FC482532548F00416C15 /* Factory.swift */; };
+		1C44FC56253254C300416C15 /* PagedResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FC55253254C300416C15 /* PagedResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		1C44FC0D2532488E00416C15 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		1C44FC152532491500416C15 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		1C44FC162532497500416C15 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		1C44FC3E2532507800416C15 /* validResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = validResponse.json; sourceTree = "<group>"; };
+		1C44FC43253250BB00416C15 /* ModelParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelParsingTests.swift; sourceTree = "<group>"; };
+		1C44FC482532548F00416C15 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		1C44FC55253254C300416C15 /* PagedResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagedResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1C44FBB92532454100416C15 /* FactoriesTests.swift */,
+				1C44FC3C2532503A00416C15 /* Models */,
 				1C44FBBB2532454100416C15 /* Info.plist */,
 			);
 			path = FactoriesTests;
@@ -145,6 +154,8 @@
 		1C44FBD52532454900416C15 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1C44FC482532548F00416C15 /* Factory.swift */,
+				1C44FC55253254C300416C15 /* PagedResource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +244,23 @@
 				1C44FC162532497500416C15 /* Production.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		1C44FC3C2532503A00416C15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C44FC3D2532504500416C15 /* MockData */,
+				1C44FC43253250BB00416C15 /* ModelParsingTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1C44FC3D2532504500416C15 /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				1C44FC3E2532507800416C15 /* validResponse.json */,
+			);
+			path = MockData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C44FC3F2532507800416C15 /* validResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,10 +414,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C44FC56253254C300416C15 /* PagedResource.swift in Sources */,
 				1C44FBF22532475A00416C15 /* AppCoordinator.swift in Sources */,
 				1C44FBE82532472A00416C15 /* Coordinator.swift in Sources */,
 				1C44FBA32532453E00416C15 /* AppDelegate.swift in Sources */,
 				1C44FBED2532474300416C15 /* RootViewCoordinator.swift in Sources */,
+				1C44FC492532548F00416C15 /* Factory.swift in Sources */,
 				1C44FC0E2532488E00416C15 /* Environment.swift in Sources */,
 				1C44FC052532480100416C15 /* HomeViewController.swift in Sources */,
 				1C44FBFD253247DA00416C15 /* HomeCoordinator.swift in Sources */,
@@ -401,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C44FC44253250BB00416C15 /* ModelParsingTests.swift in Sources */,
 				1C44FBBA2532454100416C15 /* FactoriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

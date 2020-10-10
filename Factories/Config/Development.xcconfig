@@ -1,0 +1,15 @@
+//
+//  Development.xcconfig
+//  Factories
+//
+//  Created by Raphael Souza on 2020-10-10.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// API
+BASE_URL = https:/$()/sg666zbdmf.execute-api.us-east-1.amazonaws.com
+API_PREFIX = /dev
+
+API_NAME = Factories β

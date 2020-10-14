@@ -14,13 +14,25 @@ class HomeCoordinator: RootViewCoordinator {
     var childCoordinators: [Coordinator] = []
     
     var rootViewController: UIViewController = {
-        HomeViewController()
+        UINavigationController()
     }()
     
     // MARK: Lifecycle
     
     func start() {
+        let homeController = HomeViewController()
+        homeController.coordinatorDelegate = self
         
+        let navController = rootViewController as? UINavigationController
+        navController?.pushViewController(homeController, animated: true)
+    }
+    
+}
+
+extension HomeCoordinator: HomeViewControllerCoordinatorDelegate {
+    
+    func didSelect(_ factory: Factory) {
+        // TODO: send the factory object to details scene
     }
     
 }

@@ -50,9 +50,7 @@ class NetworService: NetworkClient {
                 completion(.success(response))
                 return
             } catch {
-                // TODO: Replace with a proper error
-                let error = NSError(domain: "network", code: 120, userInfo: [:])
-                completion(.failure(error))
+                completion(.failure(RSError.ServerError.unknown))
                 return
             }
         }

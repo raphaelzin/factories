@@ -29,6 +29,12 @@ class FactoryService: FactoryServiceProvider {
     // MARK: Service methods
     
     func fetchFactories(offset: String?, completion: @escaping FactoriesResponse) {
+        // Validate offset before making network request
+        if let offset = offset, let intOffset = Int(offset), intOffset < 0 {
+            completion(.failure(RSError.Misc.invalidPagingOffset))
+            return
+        }
+        
         // Kinda weird not to have a path for the resources, but it works jsut fine.
         networkManager.request(PageResource<Factory>.self,
                                endpoint: .init(method: .get, path: "", parameters: ["offset": offset ?? "0"]),

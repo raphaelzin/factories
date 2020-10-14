@@ -14,3 +14,15 @@ class Factory: Codable {
     var country: String
     var division: String
 }
+
+extension Factory: Equatable, Hashable {
+    
+    static func == (lhs: Factory, rhs: Factory) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+}

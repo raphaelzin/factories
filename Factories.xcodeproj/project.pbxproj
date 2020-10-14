@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1960E225368C4A00EA7BAA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1960E125368C4A00EA7BAA /* HomeViewModel.swift */; };
+		1C1960E725368C9000EA7BAA /* FactoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1960E625368C9000EA7BAA /* FactoriesService.swift */; };
 		1C20977A253265A6003823C7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C209779253265A6003823C7 /* Endpoint.swift */; };
 		1C44FBA32532453E00416C15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FBA22532453E00416C15 /* AppDelegate.swift */; };
 		1C44FBA52532453E00416C15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C44FBA42532453E00416C15 /* SceneDelegate.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C1960E125368C4A00EA7BAA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1C1960E625368C9000EA7BAA /* FactoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoriesService.swift; sourceTree = "<group>"; };
 		1C209779253265A6003823C7 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		1C44FB9F2532453E00416C15 /* Factories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Factories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C44FBA22532453E00416C15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +104,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C1960DF25368B5F00EA7BAA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1C1960E025368C3600EA7BAA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1C44FC042532480100416C15 /* HomeViewController.swift */,
+				1C1960E125368C4A00EA7BAA /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		1C44FB962532453D00416C15 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +162,7 @@
 			children = (
 				1C44FBB92532454100416C15 /* FactoriesTests.swift */,
 				1C44FC3C2532503A00416C15 /* Models */,
+				1C1960DF25368B5F00EA7BAA /* Networking */,
 				1C44FBBB2532454100416C15 /* Info.plist */,
 			);
 			path = FactoriesTests;
@@ -178,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				1C44FBF62532476D00416C15 /* Common */,
-				1C44FC042532480100416C15 /* HomeViewController.swift */,
+				1C1960E025368C3600EA7BAA /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -273,6 +294,7 @@
 		1C44FC5A25325E8C00416C15 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1C1960E625368C9000EA7BAA /* FactoriesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -437,10 +459,12 @@
 				1C44FC492532548F00416C15 /* Factory.swift in Sources */,
 				1C44FC0E2532488E00416C15 /* Environment.swift in Sources */,
 				1C44FC052532480100416C15 /* HomeViewController.swift in Sources */,
+				1C1960E225368C4A00EA7BAA /* HomeViewModel.swift in Sources */,
 				1C44FBFD253247DA00416C15 /* HomeCoordinator.swift in Sources */,
 				1C44FBF82532478500416C15 /* SplashController.swift in Sources */,
 				1C44FBA52532453E00416C15 /* SceneDelegate.swift in Sources */,
 				1C44FC5C2532604900416C15 /* NetworkClient.swift in Sources */,
+				1C1960E725368C9000EA7BAA /* FactoriesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

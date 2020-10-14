@@ -31,6 +31,7 @@ class NetworService: NetworkClient {
         if endpoint.method == .get, let params = endpoint.parameters {
             var components = URLComponents(url: endpointURL, resolvingAgainstBaseURL: false)!
             
+            components.queryItems = []
             for (key, value) in params {
                 components.queryItems?.append(URLQueryItem(name: key, value: "\(value)"))
             }

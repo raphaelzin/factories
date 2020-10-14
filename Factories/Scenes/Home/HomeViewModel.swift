@@ -26,7 +26,7 @@ class HomeViewModel: HomeViewModelType {
     
     private let factoryService: FactoryServiceProvider
     
-    private var nextPage: String?
+    private var nextItemsOffset: String?
     
     var hasReachedEnd: Bool = false
     
@@ -43,17 +43,20 @@ class HomeViewModel: HomeViewModelType {
     // MARK: Networking methods
     
     func fetchPage() {
-        if hasReachedEnd && nextPage == nil {
+        if hasReachedEnd && nextItemsOffset == nil {
             return
         }
         
-        factoryService.fetchFactories(next: nextPage) { [weak self] (result) in
+        factoryService.fetchFactories(offset: nextItemsOffset) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let page):
                 self.factories.append(contentsOf: page.results)
                 self.hasReachedEnd = page.next == nil
-                self.nextPage = page.next
+                
+                // Get the offset number.
+                let next = page.next?.split(separator: "=").last.map { String($0) }
+                self.nextItemsOffset = next
                 self.delegate?.didFetchFactories()
             case .failure(let error):
                 self.delegate?.didFailedFetchingFactories(with: error)

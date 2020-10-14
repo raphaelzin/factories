@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FactoryServiceProvider: class {
-    func fetchFactories(next: String?, completion: @escaping FactoriesResponse)
+    func fetchFactories(offset: String?, completion: @escaping FactoriesResponse)
 }
 
 typealias FactoriesResponse = (Result<PageResource<Factory>, Error>) -> Void
@@ -28,11 +28,10 @@ class FactoryService: FactoryServiceProvider {
     
     // MARK: Service methods
     
-    func fetchFactories(next: String?, completion: @escaping FactoriesResponse) {
-        
+    func fetchFactories(offset: String?, completion: @escaping FactoriesResponse) {
         // Kinda weird not to have a path for the resources, but it works jsut fine.
         networkManager.request(PageResource<Factory>.self,
-                               endpoint: .init(method: .get, path: ""),
+                               endpoint: .init(method: .get, path: "", parameters: ["offset": offset ?? "0"]),
                                completion: completion)
     }
     

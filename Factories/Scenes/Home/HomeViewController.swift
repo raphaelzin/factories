@@ -48,6 +48,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureNavgationBar()
         configureLayout()
         viewModel.fetchPage()
     }
@@ -57,6 +58,10 @@ class HomeViewController: UIViewController {
 // MARK: View Configuration
 
 private extension HomeViewController {
+    
+    func configureNavgationBar() {
+        navigationItem.title = NSLocalizedString("factories", comment: "Home title")
+    }
     
     func configureLayout() {
         view.addSubview(tableView)

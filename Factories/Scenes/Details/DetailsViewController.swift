@@ -26,7 +26,14 @@ class DetailsViewController: UIViewController {
         stv.axis = .vertical
         stv.spacing = 8
         stv.translatesAutoresizingMaskIntoConstraints = false
+//        stv.setContentHuggingPriority(.required, for: .vertical)
         return stv
+    }()
+    
+    private lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        return scroll
     }()
     
     // MARK: Lifecycle
@@ -65,13 +72,22 @@ private extension DetailsViewController {
         infoStackContainer.layer.shadowRadius = 6
         infoStackContainer.layer.shadowOffset = .zero
         
-        view.addSubview(infoStackContainer)
+        view.addSubview(scrollView)
+        scrollView.addSubview(infoStackContainer)
+        infoStackContainer.addSubview(infoStack)
         
-        view.addSubview(infoStack)
         NSLayoutConstraint.activate([
-            infoStackContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            infoStackContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            infoStackContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            scrollView.contentLayoutGuide.widthAnchor.constraint(equalTo: view.widthAnchor),
+
+            infoStackContainer.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor, constant: 16),
+            infoStackContainer.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor, constant: -16),
+            infoStackContainer.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor, constant: 16),
+            infoStackContainer.bottomAnchor.constraint(lessThanOrEqualTo: scrollView.contentLayoutGuide.bottomAnchor),
             
             infoStack.leadingAnchor.constraint(equalTo: infoStackContainer.leadingAnchor, constant: 16),
             infoStack.trailingAnchor.constraint(equalTo: infoStackContainer.trailingAnchor, constant: -16),

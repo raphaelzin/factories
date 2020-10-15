@@ -105,7 +105,11 @@ private extension DetailsViewController {
         
         let countryRow = DetailsDataRow()
         countryRow.titleLabel.text = "Country"
-        countryRow.valueLabel.text = factory.country
+        
+        countryRow.valueLabel.text = [factory.country.asCountryName,
+                                      factory.country.asCountryFlag]
+            .compactMap { $0 }
+            .joined(separator: " ")
         
         [idRow, nameRow, divisionRow, addressRow, countryRow].forEach { row in
             infoStack.addArrangedSubview(row)

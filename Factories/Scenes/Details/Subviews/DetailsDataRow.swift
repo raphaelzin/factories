@@ -21,7 +21,7 @@ class DetailsDataRow: UIStackView {
     lazy var valueLabel: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .label
-        lbl.font = .boldSystemFont(ofSize: 12)
+        lbl.font = .systemFont(ofSize: 17)
         return lbl
     }()
     
@@ -43,10 +43,11 @@ class DetailsDataRow: UIStackView {
 private extension DetailsDataRow {
     
     func configureLayout() {
+        axis = .vertical
+        spacing = 2
+        
         addArrangedSubview(titleLabel)
         addArrangedSubview(valueLabel)
-        
-        axis = .vertical
     }
     
 }

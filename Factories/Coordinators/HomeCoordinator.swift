@@ -13,8 +13,14 @@ class HomeCoordinator: RootViewCoordinator {
     
     var childCoordinators: [Coordinator] = []
     
-    var rootViewController: UIViewController = {
-        UINavigationController()
+    var rootViewController: UIViewController {
+        navigationController
+    }
+    
+    private lazy var navigationController: UINavigationController = {
+        let navController = UINavigationController()
+        navController.navigationBar.prefersLargeTitles = true
+        return navController
     }()
     
     // MARK: Lifecycle
@@ -22,9 +28,7 @@ class HomeCoordinator: RootViewCoordinator {
     func start() {
         let homeController = HomeViewController()
         homeController.coordinatorDelegate = self
-        
-        let navController = rootViewController as? UINavigationController
-        navController?.pushViewController(homeController, animated: true)
+        navigationController.pushViewController(homeController, animated: true)
     }
     
 }
@@ -32,7 +36,10 @@ class HomeCoordinator: RootViewCoordinator {
 extension HomeCoordinator: HomeViewControllerCoordinatorDelegate {
     
     func didSelect(_ factory: Factory) {
-        // TODO: send the factory object to details scene
+        let viewModel = DetailsViewModel(factory: factory)
+        let detailsController = DetailsViewController(viewModel: viewModel)
+        
+        navigationController.pushViewController(detailsController, animated: true)
     }
     
 }

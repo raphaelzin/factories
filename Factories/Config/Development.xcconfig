@@ -12,4 +12,4 @@
 BASE_URL = https:/$()/sg666zbdmf.execute-api.us-east-1.amazonaws.com
 API_PREFIX = /dev
 
-API_NAME = Factories β
+APP_NAME = Factories β

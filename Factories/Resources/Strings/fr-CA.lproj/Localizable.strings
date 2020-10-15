@@ -8,3 +8,11 @@
 
 
 "factories" = "Usines";
+"name" = "Nom";
+"country" = "Pays";
+"id" = "ID";
+"division" = "Division";
+"address" = "Adresse";
+
+"invalid-offset-error" = "Index de page non valide, veuillez réessayer plus tard";
+"generic-server-error" = "Un problème est survenu avec le serveur, veuillez réessayer plus tard";

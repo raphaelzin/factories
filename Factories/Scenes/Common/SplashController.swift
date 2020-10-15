@@ -12,7 +12,7 @@ class SplashController: UIViewController {
         let label = UILabel()
         label.text = Environment.getValue(forKey: .appName)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.sizeToFit()
+        label.font = .boldSystemFont(ofSize: 28)
         return label
     }()
     

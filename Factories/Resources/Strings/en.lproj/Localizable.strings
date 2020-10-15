@@ -7,3 +7,13 @@
 */
 
 "factories" = "Factories";
+"name" = "Name";
+"country" = "Country";
+"id" = "ID";
+"division" = "Division";
+"address" = "Address";
+
+// Errors
+
+"invalid-offset-error" = "Invalid page index, please try again later";
+"generic-server-error" = "There was a problem with the server, please try again later";

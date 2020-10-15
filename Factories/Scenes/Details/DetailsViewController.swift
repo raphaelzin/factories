@@ -26,7 +26,6 @@ class DetailsViewController: UIViewController {
         stv.axis = .vertical
         stv.spacing = 8
         stv.translatesAutoresizingMaskIntoConstraints = false
-//        stv.setContentHuggingPriority(.required, for: .vertical)
         return stv
     }()
     
@@ -104,23 +103,23 @@ private extension DetailsViewController {
         let factory = viewModel.factory
         
         let idRow = DetailsDataRow()
-        idRow.titleLabel.text = "ID"
+        idRow.titleLabel.text = NSLocalizedString("id", comment: "ID title")
         idRow.valueLabel.text = "\(factory.id)"
         
         let nameRow = DetailsDataRow()
-        nameRow.titleLabel.text = "Name"
+        nameRow.titleLabel.text = NSLocalizedString("name", comment: "Name title")
         nameRow.valueLabel.text = factory.name
         
         let divisionRow = DetailsDataRow()
-        divisionRow.titleLabel.text = "Division"
+        divisionRow.titleLabel.text = NSLocalizedString("division", comment: "Division title")
         divisionRow.valueLabel.text = factory.division
         
         let addressRow = DetailsDataRow()
-        addressRow.titleLabel.text = "Address"
+        addressRow.titleLabel.text = NSLocalizedString("address", comment: "Address title")
         addressRow.valueLabel.text = factory.address
         
         let countryRow = DetailsDataRow()
-        countryRow.titleLabel.text = "Country"
+        countryRow.titleLabel.text = NSLocalizedString("country", comment: "Country title")
         
         countryRow.valueLabel.text = [factory.country.asCountryName,
                                       factory.country.asCountryFlag]
